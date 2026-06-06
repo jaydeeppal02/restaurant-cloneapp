@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Rubik+Lines&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Space Grotesk", sans-serif; */
+  /* font-family: "Rubik Lines", system-ui; */
+}
+
+:root {
+  --primary: #e9a91a;
+  --secondary: black;
+}
+
+header {
+  font-family: "Bricolage Grotesque", sans-serif;
+  nav {
+    background: #f9f8f8;
+  }
+  .navbar-brand span {
+    color: var(--primary);
+  }
+  li {
+    padding: 0 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .navlink:active {
+    color: yellow !important;
+  }
+
+  form {
+    span:nth-child(1) {
+      width: 37px;
+      height: 37px;
+      background: #eae6e6;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    span {
+      font-size: 20px;
+      margin: 0px 7px;
+    }
+  }
+}
+
+.home-box {
+  margin-top: 0 !important;
+  font-family: "Space Grotesk", sans-serif;
+  min-height: 620px;
+
+  span {
+    background: #eae6e6 !important;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  @media (max-width:768px) {
+    h1 {
+    font-size: 2rem;
+  }
+  }
+  button {
+    background: var(--primary);
+  }
+  button:hover {
+    border: 1px solid;
+    color: var(--primary);
+  }
+}
+.home-img {
+  text-align: center;
+  padding: auto;
+}
+
+.home-img2 {
+  width: 90%;
+  height: 600px;
+  background-image: url("./img/hero-girl.png");
+  background-size: cover;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  text-align: center;
+}
+
+/* }
+.hero-img2 img{
+    overflow: hidden;
+} */
+.pages {
+  font-family: "Space Grotesk", sans-serif;
+  .pages-img {
+    position: relative;
+  }
+  .pages-img2 {
+    width: 90%;
+    height: 600px;
+    background: url("img/interior.jpg");
+    background-size: cover;
+  }
+  .box-17 {
+    background: #f9be1a;
+    position: absolute;
+    bottom: -2rem;
+    right: 0px;
+    transition: all 0.5s ease;
+    transform: rotate(10deg);
+  }
+  .box-17 h1 {
+    font-family: "Rubik Lines", system-ui;
+  }
+  .box-17:hover {
+    transform: rotate(20deg);
+    transition: all 0.5s ease;
+    border-top-right-radius: 30px;
+  }
+  .pages-content {
+    .row {
+      div:nth-child(1) {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bolder;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        color: var(--primary);
+        font-family: "Rubik Lines", system-ui;
+      }
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.today {
+  font-family: "Space Grotesk", sans-serif;
+  button {
+    background-color: var(--primary);
+  }
+  button:hover {
+    color: var(--primary);
+    border: 1px solid;
+  }
+
+  .img-bg {
+    position: relative;
+  }
+
+  .img-bg span::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: var(--primary);
+    position: absolute;
+    bottom: 8px;
+    left: 19px;
+    border-radius: 50%;
+    filter: blur(2px);
+    z-index: -2;
+  }
+
+  @media (max-width: 768px) {
+    .img-bg span::after {
+      top: 1.8em;
+      left:9px;
+    }
+  }
+
+  .starter,
+  .dessert,
+  .main-course,
+  .drinks {
+    transition: all 0.5s ease;
+  }
+
+  .starter:hover {
+    border-radius: 30px;
+    box-shadow: 5px 5px 25px 0px #999;
+    cursor: default;
+    transition: all 0.5s ease;
+    transform: scale(1.02);
+  }
+
+  .main-course:hover {
+    border-radius: 30px;
+    box-shadow: 5px 5px 25px 0px #999;
+    cursor: default;
+    transition: all 0.5s ease;
+    transform: scale(1.02);
+  }
+  .drinks:hover {
+    border-radius: 30px;
+    box-shadow: 5px 5px 25px 0px #999;
+    cursor: default;
+    transition: all 0.5s ease;
+    transform: scale(1.02);
+  }
+
+  .dessert:hover {
+    border-radius: 30px;
+    box-shadow: 5px 5px 25px 0px #999;
+    cursor: default;
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+  }
+}
+
+.menu {
+  font-family: "Space Grotesk", sans-serif;
+  .card {
+    border: none !important;
+  }
+  .card-body {
+    padding: 0 !important;
+    border: none !important;
+  }
+  .card-title {
+    padding: 0 !important;
+    background: #eae6e6;
+    position: relative !important;
+    div {
+      width: 50px;
+      height: 54px;
+      background: var(--primary);
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+  .star {
+    color: var(--primary);
+  }
+}
+
+.chef {
+  font-family: "Space Grotesk", sans-serif;
+  button {
+    background-color: var(--primary);
+  }
+  button:hover {
+    color: var(--primary);
+    border: 1px solid;
+  }
+  .card {
+    border: none !important;
+    .card-body {
+      div {
+        span {
+          color: var(--primary);
+        }
+      }
+    }
+
+    position: relative;
+    img {
+      z-index: 1;
+      transition: all 0.4s ease;
+    }
+    img:hover {
+      transform: scale(1.04);
+      transition: all 0.4s ease;
+    }
+  }
+
+  .card span::after {
+    content: "";
+    width: 200px;
+    height: 250px;
+    border-radius: 50%;
+    background: var(--primary);
+    position: absolute;
+    top: 6rem;
+    right: 3.2em;
+    opacity: 0.4;
+    filter: blur(10px);
+  }
+
+  @media (max-width: 768px) {
+    .card span::after {
+      top: 8rem;
+      left: 7em;
+    }
+  }
+}
+
+.download-app {
+  button {
+    background-color: var(--primary);
+  }
+  button:hover {
+    color: var(--primary);
+    border: 1px solid;
+  }
+}
+
+.footer{
+  
+  background: var(--primary);
+  h1{
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+  p{
+    font-family: "Rubik Lines", system-ui;
+  }
+}
