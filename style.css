@@ -161,10 +161,10 @@ header {
     z-index: -2;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width:768px) {
     .img-bg span::after {
       top: 1.8em;
-      left:9px;
+      left:5px;
     }
   }
 
@@ -280,7 +280,7 @@ header {
   @media (max-width: 768px) {
     .card span::after {
       top: 8rem;
-      left: 7em;
+      left: 5em;
     }
   }
 }
