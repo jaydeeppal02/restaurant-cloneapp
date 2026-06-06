@@ -163,7 +163,7 @@ header {
 
   @media (max-width:768px) {
     .img-bg span::after {
-      top: 1.8em;
+      top: 1em;
       left:5px;
     }
   }
