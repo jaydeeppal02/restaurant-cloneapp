@@ -146,6 +146,9 @@ header {
 
   .img-bg {
     position: relative;
+    img{
+      width:75px !important;
+    }
   }
 
   .img-bg span::after {
