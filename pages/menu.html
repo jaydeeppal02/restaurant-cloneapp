@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary shadow-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fs-3 fw-bold" onclick="window.history.back()"
+          ><span><i class="fa fa-hashtag" aria-hidden="true"></i></span
+          >UrbanBites.</a
+        >
+        <div>
+          <span class="fs-4 fw-bold">Menu </span>
+          <button
+            class="fs-5 px-2 py-1 fw-bold border-0"
+            onclick="window.history.back()"
+          >
+            Home
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu  -->
+    <main>
+      <section class="mt-5 pt-5">
+        <div class="container" id="menu-box">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card" style="width: 18rem">
+                <img src="../img/menu3.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Burger</h5>
+                  <p class="card-text">
+                    Juicy patty, cheese, lettuce burger🍔✨
+                  </p>
+                  <button class="btn btn-primary" value="Burger">Buy</button>
+                  <a href="#" class="btn btn-primary">$5</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card" style="width: 18rem">
+                <img src="../img/snoodles.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Spicy Noodles</h5>
+                  <p class="card-text">
+                    Flavorful noodles tossed with fresh vegetables and savory
+                    sauces. 🍜
+                  </p>
+                  <button class="btn btn-primary" value="Spicy Noodles">
+                    Buy
+                  </button>
+                  <a href="#" class="btn btn-primary">$10</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card" style="width: 18rem">
+                <img src="../img/dosa.jpg" class="card-img-top" alt="..." />
+                <div class="card-body" id="card-body">
+                  <h5 class="card-title">South indian Dosa</h5>
+                  <p class="card-text">
+                    Golden, crispy dosa with authentic South Indian flavors. 🌟
+                  </p>
+                  <button class="btn btn-primary" value="Dosa">Buy</button>
+                  <a href="#" class="btn btn-primary">$17</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card" style="width: 18rem">
+                <img src="../img/menu4.jpg" class="card-img-top" alt="..." />
+                <div class="card-body" id="card-body">
+                  <h5 class="card-title">Italian Chhoped salad</h5>
+                  <p class="card-text">
+                    Fresh, crisp, and healthy vegetable salad. 🥗✨
+                  </p>
+                  <button class="btn btn-primary" value="Salad">Buy</button>
+                  <a href="#" class="btn btn-primary">$10</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Pop up box  -->
+
+    <div class="popup-box" id="popup">
+      <h3 id="item">Your want<span id="item-name"></span></h3>
+      <div class="">
+        <form method="POST">
+          <input
+            type="text"
+            name="name"
+            id="fullname"
+            placeholder="Your Name"
+             autocomplete="off"
+            required
+            class=""
+          /><br />
+          <input
+            type="tel"
+            maxlength="10"
+            name="number"
+            id="number"
+            placeholder="Mobile Number"
+             autocomplete="off"
+            optional
+          /><br />
+          <input
+            type="number"
+            min="1"
+            name="quantity"
+            id="quantity"
+            placeholder="Quantity"
+             autocomplete="off"
+            required
+          />
+          <br />
+          <span class="text-light fs-3 fw-bold" id="rate"></span><br />
+          <button
+            type="submit"
+            class="btn border w-100 mt-3 border-2 fw-bold"
+            id="orderbtn"
+          >
+            Place order
+          </button>
+          <span id="goback" class="fs-2 p-0 fw-normal cursor-pointer" title="go back"><i class="fa fa-caret-square-o-left"></i></span>
+        </form>
+      </div>
+    </div>
+    <script>
+      const submitBtn = document.getElementById("orderbtn");
+      const orderBtn = document.querySelectorAll("#menu-box button");
+      const aTag = document.querySelectorAll(".card-body a");
+      const popup = document.getElementById("popup");
+      const itemName = document.querySelector("#item-name");
+      const name = document.querySelector("#fullname");
+      const number = document.querySelector("#number");
+      const quantity = document.querySelector("#quantity");
+      const item = document.querySelector("#item-name");
+      const backBtn = document.querySelector("#goback");
+      const price = document.querySelector("#rate");
+
+      function showStor() {
+        let data = localStorage.getItem("orders");
+        console.log(data);
+      }
+      // showStor();
+
+      orderBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          itemName.innerText = " " + btn.value;
+          popup.classList.add("popOut");
+          let sty = document.querySelector("#menu-box");
+          sty.style.filter = "blur(3px)";
+          sty.style.opacity = "0.2";
+
+          let rate = btn.parentElement;
+          rate = rate.querySelector("a").textContent;
+          price.innerText = "Amount:" + rate;
+        });
+      });
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (name.value != "" && quantity.value != 0) {
+          const order = {
+            item: item.textContent,
+            name: name.value,
+            number: number.value,
+            quantity: quantity.value,
+          };
+
+          const orders = JSON.parse(localStorage.getItem("orders")) || [];
+          orders.push(order);
+          localStorage.setItem("orders", JSON.stringify(orders));
+           submitBtn.innerText = "Your order placed";   
+           setTimeout(()=>{
+             popup.classList.remove("popOut");
+
+          let sty = document.querySelector("#menu-box");
+          sty.style.filter = "blur(0px)";
+          sty.style.opacity = "1";
+          window.location.href = "/pages/order.html";
+           },1500)        
+         
+          
+
+          
+        } else {
+          submitBtn.innerText = "Sorry! fill the field";
+        }
+      });
+
+      backBtn.addEventListener("click", () => {
+        popup.classList.remove("popOut");
+        let sty = document.querySelector("#menu-box");
+        sty.style.filter = "blur(0px)";
+        sty.style.opacity = "1";
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
